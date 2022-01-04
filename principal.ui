@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>383</width>
+    <width>558</width>
     <height>381</height>
    </rect>
   </property>
@@ -21,8 +21,18 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QGroupBox" name="groupBox">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="title">
        <string>Centigrados</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
@@ -37,7 +47,7 @@
          <item>
           <widget class="QDial" name="inCent">
            <property name="minimum">
-            <number>-18</number>
+            <number>-273</number>
            </property>
            <property name="pageStep">
             <number>10</number>
@@ -54,8 +64,18 @@
     </item>
     <item>
      <widget class="QGroupBox" name="groupBox_2">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="title">
        <string>Fahrenheit</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
@@ -72,11 +92,57 @@
          </item>
          <item>
           <widget class="QDial" name="inFahr">
+           <property name="minimum">
+            <number>-459</number>
+           </property>
            <property name="maximum">
             <number>210</number>
            </property>
            <property name="value">
             <number>32</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="title">
+       <string>Kelvin</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLCDNumber" name="outKelvin">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 170, 0);</string>
+           </property>
+           <property name="value" stdset="0">
+            <double>273.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="inKelvin">
+           <property name="maximum">
+            <number>372</number>
+           </property>
+           <property name="value">
+            <number>273</number>
            </property>
           </widget>
          </item>
@@ -92,7 +158,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>383</width>
+     <width>558</width>
      <height>20</height>
     </rect>
    </property>
@@ -132,6 +198,22 @@
     <hint type="destinationlabel">
      <x>285</x>
      <y>125</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inKelvin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outKelvin</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>268</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>126</y>
     </hint>
    </hints>
   </connection>

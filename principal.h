@@ -16,7 +16,11 @@ public:
     ~Principal();
 public slots:
     void cent2fahr(int);
+    void cent2kelvin(int);
     void fahr2cent(int);
+    void fahr2kelvin(int);
+    void kelvin2cent(int);
+    void kelvin2fahr(int);
 private:
     Ui::Principal *ui;
 };
